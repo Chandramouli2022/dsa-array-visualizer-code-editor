@@ -20,8 +20,8 @@ Welcome to the **DSA Array Visualizer & Code Editor**! This web-based tool allow
 
 ## Screenshots
 
-![javascript](./assets/image.png)  
-![python](./assets/image-1.png)  
+![javascript](./src/assets/image.png)  
+![python](./src/assets/image-1.png)  
 
 ## Tech Stack
 
