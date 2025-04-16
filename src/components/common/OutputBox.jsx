@@ -5,7 +5,7 @@ const OutputBox = () => {
   const { output, error, theme} = useEditorContext();
   return (
     <div className='output-box'>
-      <strong>Output:</strong>
+      <div className={`headings ${theme}`}>Output:</div>
       <pre className={`output-box-pre ${theme}`}>{error ? `Error: ${error}` : output}</pre>
     </div>
   );

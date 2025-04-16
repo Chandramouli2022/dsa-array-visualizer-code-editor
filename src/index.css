@@ -217,7 +217,7 @@ option:hover {
   background-color: #f4f4f4;
   padding: 10px;
   border-radius: 5px;
-  height: 20vh;
+  max-height: 20vh;
   overflow-y: scroll;
   scrollbar-width: thin;
   scroll-behavior: smooth;
@@ -273,4 +273,25 @@ td {
 .dark {
   background-color: #2c2c2c;
   color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    overflow: auto;
+  }
+  .left-pane,
+  .right-pane {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+  
+  .left-pane {
+    order: 1; /* Move left pane above right pane */
+  }
+  .right-pane {
+    order: 2; /* Move right pane below left pane */
+  }
+  
 }
