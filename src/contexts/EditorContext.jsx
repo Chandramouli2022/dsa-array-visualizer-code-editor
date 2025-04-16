@@ -23,6 +23,13 @@ export const EditorProvider = ({ children }) => {
     setError("");
   };
 
+  const clearButton = () => {
+    setCode("");
+    setOutput("Compiler is Ready");
+    setError("");
+    setVisualizations([]);
+  };
+
   return (
     <EditorContext.Provider
       value={{
@@ -38,6 +45,7 @@ export const EditorProvider = ({ children }) => {
         setCode,
         switchTheme,
         switchLanguage,
+        clearButton,
         monacoTheme: EDITOR_THEMES[theme],
       }}
     >

@@ -9,7 +9,9 @@ import { languages } from "monaco-editor";
 
 const CodeExecutor = () => {
   const { runJs } = useJsRunner();
-  const { language, switchLanguage, theme, switchTheme } = useEditorContext();
+  const { clearButton, language, switchLanguage, theme, switchTheme } =
+    useEditorContext();
+
   return (
     <div className='container'>
       <div className='left-pane'>
@@ -48,6 +50,9 @@ const CodeExecutor = () => {
         <EditorWrapper />
         <button className='button' onClick={runJs}>
           Run
+        </button>
+        <button className='button' onClick={() => clearButton()}>
+          Clear
         </button>
         <OutputBox />
       </div>

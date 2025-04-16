@@ -35,7 +35,7 @@ const Visualizer = () => {
                     >
                       {val}
                       <br />
-                      <span className='dp-cell-indexes'>i: 0, j: {j}</span>
+                      <span className='dp-cell-indexes'> i: {j}</span>
                     </td>
                   ))}
                 </tr>
@@ -48,12 +48,12 @@ const Visualizer = () => {
                         className={`${
                           viz.heading === [i, j].join(",") ? "curr-cell" : ""
                         }`}
-                        style={{ border: "1px solid #ccc", padding: "8px" }}
+                        style={{ border: "1px solid #ccc" }}
                       >
                         {val === true ? "T" : val === false ? "F" : val}
                         <br />
                         <span className='dp-cell-indexes'>
-                          i: {i}, j: {j}
+                          {i}, {j}
                         </span>
                       </td>
                     ))}

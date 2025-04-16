@@ -127,24 +127,24 @@ body,
   position: relative;
   box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.2);
 }
-.button{
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-color: lightblue;
-    color: #000;
-    border: none;
-    border-radius: 8px;
-    padding: 3px 6px;
-    font-family: "Courier New", monospace;
-    font-size: 12px;
-    font-weight: bold;
-    outline: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    position: relative;
-    box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.2);
-    margin: 10px 0px 0px 0px;
+.button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: lightblue;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 3px 6px;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.2);
+  margin: 10px 20px 0px 0px;
 }
 /* .button.dark{
     box-shadow: 0px 2px 14px rgba(150, 150, 150, 0.2);
@@ -157,7 +157,7 @@ body,
   border-color: #0f0; /* neon green for coolness */
 }
 option:hover {
- color: red;
+  color: red;
 }
 /* Add focus ring */
 .dropdowns:focus {
@@ -197,6 +197,7 @@ option:hover {
 
 .visualizer {
   height: 100%;
+  width: 100%;
   overflow-y: scroll;
   scrollbar-width: thin;
   scroll-behavior: smooth;
@@ -237,9 +238,7 @@ option:hover {
   width: 100%;
   margin-top: 10px;
 }
-
 .matrix-table td {
-  padding: 6px;
   border: none;
   border-top: 1px solid #ddd;
   border-right: 1px solid #ddd;
@@ -286,12 +285,14 @@ td {
     width: 100%;
     height: auto;
   }
-  
+  tr {
+    width: 10px;
+  }
+
   .left-pane {
     order: 1; /* Move left pane above right pane */
   }
   .right-pane {
     order: 2; /* Move right pane below left pane */
   }
-  
 }

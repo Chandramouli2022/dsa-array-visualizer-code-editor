@@ -9,7 +9,8 @@ import { languages } from "monaco-editor";
 
 const PythonExecutor = ({ pyodide }) => {
   const { runPython } = usePythonRunner(pyodide); // extracted logic, if you choose
-  const { language, switchLanguage, theme, switchTheme } = useEditorContext();
+  const { clearButton, language, switchLanguage, theme, switchTheme } =
+    useEditorContext();
 
   return (
     <div className='container'>
@@ -49,6 +50,9 @@ const PythonExecutor = ({ pyodide }) => {
         <EditorWrapper />
         <button className={`button`} onClick={runPython}>
           Run
+        </button>
+        <button className='button' onClick={() => clearButton()}>
+          Clear
         </button>
         <OutputBox />
       </div>
