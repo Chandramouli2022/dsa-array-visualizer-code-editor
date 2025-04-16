@@ -1,0 +1,276 @@
+/* Ensure editor container doesn't get too large */
+:root {
+  scrollbar-width: none;
+}
+
+/* Reset browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set full height and dark background */
+html,
+body,
+#root {
+  height: 100%;
+  background-color: #121212; /* Or whatever dark bg you want */
+  color: white; /* Optional: for contrast */
+  overflow: hidden; /* Optional: to remove scrollbars if not needed */
+}
+.app {
+  background-color: #f0f0f0;
+  padding: 0px;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+}
+
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000; /* true black */
+  color: #fff; /* pure white */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.loading-text {
+  display: flex;
+  gap: 4px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.dot {
+  animation: blink 1.2s infinite;
+  color: #fff;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.container {
+  display: flex;
+  height: 100%; /* Full height of the viewport */
+  width: 100%; /* Full width of the viewport */
+  overflow: hidden;
+}
+
+.left-pane {
+  flex: 1;
+  padding: 20px;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.right-pane {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  overflow: hidden;
+}
+
+.headings {
+  font-weight: 700;
+  font-size: 14px;
+  color: black;
+  margin: 10px;
+}
+.code-editor-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.code-editor-dropdowns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdowns {
+  margin: 0px 0px 0px 20px;
+}
+.dropdowns {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 6px;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.2);
+}
+.button{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: lightblue;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    padding: 3px 6px;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.2);
+    margin: 10px 0px 0px 0px;
+}
+/* .button.dark{
+    box-shadow: 0px 2px 14px rgba(150, 150, 150, 0.2);
+    border: 1px solid rgba(150, 150, 150, 0.2);
+    background-color: #2c2c2c;
+    
+} */
+/* Add subtle shadow on hover */
+.dropdowns:hover {
+  border-color: #0f0; /* neon green for coolness */
+}
+option:hover {
+ color: red;
+}
+/* Add focus ring */
+.dropdowns:focus {
+  border-color: #0f0; /* neon green for coolness */
+}
+
+/* Custom arrow using background image */
+.dropdowns::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #fff;
+  pointer-events: none;
+}
+.dropdowns.dark {
+  border: 1px solid rgba(150, 150, 150, 0.2);
+  box-shadow: 0px 2px 14px rgba(150, 150, 150, 0.2);
+}
+.textarea {
+  height: 400px;
+  border: 1px solid #ccc;
+}
+
+.run-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.visualizer {
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  scrollbar-color: #999 #f4f4f4;
+  scroll-margin: 20px;
+  box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.2);
+}
+
+.visualizer.dark {
+  box-shadow: 0px 2px 14px rgba(150, 150, 150, 0.2);
+  scrollbar-color: #999 #2c2c2c;
+}
+.output-box {
+  margin-top: 20px;
+}
+
+.output-box-pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  height: 20vh;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  scrollbar-color: #999 #f4f4f4;
+  box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.2);
+}
+.output-box-pre.dark {
+  box-shadow: 0px 2px 14px rgba(150, 150, 150, 0.2);
+  scrollbar-color: #999 #2c2c2c;
+}
+.matrix-block {
+  margin: 0px 10px 20px 0px;
+  border: 1px solid #ccc;
+}
+.matrix-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.matrix-table td {
+  padding: 6px;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  text-align: center;
+}
+
+.true-cell {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.dp-cell-indexes {
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.curr-cell {
+  background-color: #4caf50;
+}
+td {
+  font-size: 12px;
+}
+
+/*Add a class to toggle between light and dark themes */
+.light {
+  background-color: white;
+  color: black;
+}
+.dark {
+  background-color: #2c2c2c;
+  color: white;
+}
