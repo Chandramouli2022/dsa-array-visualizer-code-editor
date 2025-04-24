@@ -23,7 +23,7 @@ function App() {
       {loading ? (
         <div className='loader-wrapper'>
           <p className='loading-text'>
-            Loading the Environment
+            Loading
             <span className='dot'>.</span>
             <span className='dot'>.</span>
             <span className='dot'>.</span>
