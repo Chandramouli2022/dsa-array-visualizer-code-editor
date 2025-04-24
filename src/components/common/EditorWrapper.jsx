@@ -40,7 +40,7 @@ const EditorWrapper = () => {
     } catch (error) {
       console.error("Error initializing Monaco Editor:", error);
     }
-  }, [language, theme, code]);
+  }, [language, theme]);
 
   return (
     <div

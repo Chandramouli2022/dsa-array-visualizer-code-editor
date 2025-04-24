@@ -8,7 +8,7 @@ export const EditorProvider = ({ children }) => {
   const [theme, setTheme] = useState("dark"); // 'light' or 'dark'
   const [language, setLanguage] = useState("javascript"); // 'javascript' or 'python'
   const [code, setCode] = useState(DEFAULT_CODE.javascript);
-  const [output, setOutput] = useState("Compiler is Ready");
+  const [output, setOutput] = useState("Ready to run your code!");
   const [error, setError] = useState("");
   const [visualizations, setVisualizations] = useState([]);
 
@@ -19,13 +19,13 @@ export const EditorProvider = ({ children }) => {
     setLanguage(lang);
     setCode(DEFAULT_CODE[lang]);
     setVisualizations([]);
-    setOutput("Compiler is Ready");
+    setOutput("Ready to run your code!");
     setError("");
   };
 
   const clearButton = () => {
-    setCode("");
-    setOutput("Compiler is Ready");
+    // setCode("");
+    setOutput("Ready to run your code!");
     setError("");
     setVisualizations([]);
   };
