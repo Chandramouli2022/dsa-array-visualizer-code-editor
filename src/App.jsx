@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import PythonExecutor from "./components/PythonExecutor/PythonExecutor.jsx";
 import CodeExecutor from "./components/CodeExecutor/CodeExecutor.jsx";
-import { EditorProvider, useEditorContext } from "./contexts/EditorContext";
+import { useEditorContext } from "./contexts/EditorContext";
 
 function App() {
-  const { language, switchLanguage, theme, switchTheme } = useEditorContext();
-  const [mode, setMode] = useState("javascript"); // 'python' or 'js'
+  const { language, theme } = useEditorContext();
   const [pyodide, setPyodide] = useState(null);
   const [loading, setLoading] = useState(true);
 

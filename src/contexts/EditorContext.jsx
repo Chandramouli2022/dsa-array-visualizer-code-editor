@@ -11,6 +11,7 @@ export const EditorProvider = ({ children }) => {
   const [output, setOutput] = useState("Ready to run your code!");
   const [error, setError] = useState("");
   const [visualizations, setVisualizations] = useState([]);
+  const [editorRef, setEditorRef] = useState(null);
 
   const switchTheme = () =>
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
@@ -29,6 +30,14 @@ export const EditorProvider = ({ children }) => {
     setError("");
     setVisualizations([]);
   };
+  const clearCode = () => {
+    const shouldClear = window.confirm("Are you sure you want to clear all code and outputs?");
+    if (editorRef && shouldClear) {
+      editorRef.setValue("");
+      setCode("");
+      clearButton();
+    }
+  };
 
   return (
     <EditorContext.Provider
@@ -46,6 +55,8 @@ export const EditorProvider = ({ children }) => {
         switchTheme,
         switchLanguage,
         clearButton,
+        setEditorRef,
+        clearCode,
         monacoTheme: EDITOR_THEMES[theme],
       }}
     >

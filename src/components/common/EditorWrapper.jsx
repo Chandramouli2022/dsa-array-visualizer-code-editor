@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from "react";
 import * as monaco from "monaco-editor/esm/vs/editor/editor.api";
 import "monaco-editor/esm/vs/editor/editor.all";
 import { useEditorContext } from "../../contexts/EditorContext";
+import { languages } from "monaco-editor";
 
 const EditorWrapper = () => {
-  const { code, setCode, language, theme } = useEditorContext();
+  const { code, setCode, language, theme, setEditorRef  } = useEditorContext();
   const editorRef = useRef(null);
   const containerRef = useRef(null);
 
@@ -21,12 +22,14 @@ const EditorWrapper = () => {
         lineNumbers: "on",
       });
 
+      
       const model = editor.getModel();
       const disposable = model.onDidChangeContent(() => {
         setCode(editor.getValue());
       });
 
       editorRef.current = editor;
+      setEditorRef(editor);
 
       const handleResize = () => editor.layout();
       window.addEventListener("resize", handleResize);

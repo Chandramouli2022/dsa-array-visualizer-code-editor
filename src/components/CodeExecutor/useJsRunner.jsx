@@ -1,16 +1,7 @@
 import { useEditorContext } from "../../contexts/EditorContext";
 
 const useJsRunner = () => {
-  const {
-    code,
-    setCode,
-    output,
-    setOutput,
-    error,
-    setError,
-    visualizations,
-    setVisualizations,
-  } = useEditorContext();
+  const { code, setOutput, setError, setVisualizations } = useEditorContext();
 
   // Visualize function to capture the visualizations
   const visualize = (array, type, color, heading) => {

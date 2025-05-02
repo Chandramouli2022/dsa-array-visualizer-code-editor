@@ -5,7 +5,7 @@ import './index.css';
 import App from './App.jsx';
 import { EditorProvider } from './contexts/EditorContext.jsx';
 
-// ✅ Define MonacoEnvironment before any Monaco code runs
+//Define MonacoEnvironment before any Monaco code runs
 self.MonacoEnvironment = {
   getWorker: function (_moduleId, label) {
     switch (label) {

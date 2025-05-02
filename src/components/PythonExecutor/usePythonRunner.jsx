@@ -1,16 +1,7 @@
 import { useEditorContext } from "../../contexts/EditorContext";
 
 const usePythonRunner = (pyodide) => {
-  const {
-    code,
-    setCode,
-    output,
-    setOutput,
-    error,
-    setError,
-    visualizations,
-    setVisualizations,
-  } = useEditorContext();
+  const { code, setOutput, setError, setVisualizations } = useEditorContext();
 
   const runPython = async () => {
     if (!pyodide) return;

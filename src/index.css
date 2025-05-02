@@ -210,6 +210,10 @@ option:hover {
   box-shadow: 0px 2px 14px rgba(150, 150, 150, 0.2);
   scrollbar-color: #999 #2c2c2c;
 }
+
+.headings.visual{
+  position: sticky;
+}
 .output-box {
   margin-top: 20px;
 }
