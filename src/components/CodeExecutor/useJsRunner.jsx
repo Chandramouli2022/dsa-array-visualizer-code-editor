@@ -4,7 +4,7 @@ const useJsRunner = () => {
   const { code, setOutput, setError, setVisualizations } = useEditorContext();
 
   // Visualize function to capture the visualizations
-  const visualize = (array, type, color, heading) => {
+  const visualize = (array, type=1, color="yellow", heading=[]) => {
     const deepCopy = (arr) => JSON.parse(JSON.stringify(arr));
     if (type === 1) {
       if (Array.isArray(array) && !Array.isArray(array[0])) {

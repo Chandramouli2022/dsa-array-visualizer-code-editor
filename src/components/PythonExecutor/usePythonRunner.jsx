@@ -10,7 +10,7 @@ const usePythonRunner = (pyodide) => {
       let collected = [];
       let stdout = "";
 
-      pyodide.globals.set("visualize", (array, type, color, heading) => {
+      pyodide.globals.set("visualize", (array, type=1, color="yellow", heading=[]) => {
         const jsArray = array.toJs();
         const deepCopy = JSON.parse(JSON.stringify(jsArray));
         if (type === 1) {
